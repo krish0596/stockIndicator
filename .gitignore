@@ -35,3 +35,7 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### OCA ###
+.oca
+customTests
