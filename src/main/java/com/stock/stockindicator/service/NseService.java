@@ -6,15 +6,14 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Service
 public class NseService {
 
-    private final WebClient.Builder webClientBuilder;
+    private final WebClient client;
 
     //here we can see the Bean of webclient builder getting injected via constructor injection
     public NseService(WebClient.Builder webClientBuilder) {
-        this.webClientBuilder = webClientBuilder;
+        this.client = webClientBuilder.baseUrl("https://www.nseindia.com").build();;
     }
 
     public String getChartData() {
-        WebClient client = webClientBuilder.baseUrl("https://www.nseindia.com").build();
 
         ResponseEntity<String> response = client.get()
                 .uri("/api/chart-databyindex-dynamic?index=MRFEQN&type=symbol")
