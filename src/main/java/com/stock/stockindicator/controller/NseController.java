@@ -13,41 +13,21 @@ import java.util.List;
 public class NseController {
 
     private final NseService nseService;
-    private final FirstCookie firstCookie;
     private final GenerateNewCookie generateNewCookie;
-    private final SecondCookie secondCookie;
 
-    public NseController(NseService nseService , FirstCookie firstCookie, GenerateNewCookie generateNewCookie, SecondCookie secondCookie) {
+    public NseController(NseService nseService, GenerateNewCookie generateNewCookie) {
         this.nseService = nseService;
-        this.firstCookie = firstCookie;
         this.generateNewCookie = generateNewCookie;
-        this.secondCookie = secondCookie;
     }
 
     @GetMapping("/chart")
     public String getChart() {
         return nseService.getChartData();
     }
-    @GetMapping("/cookieslist")
-    public String getCookiesList() {
-        List<String> cooki = firstCookie.returnCookie();
-        StringBuilder builder = new StringBuilder();
-        for(String cooki1 : cooki){
-            builder.append(cooki1 + "\n");
-        }
-        return builder.toString();
-    }
+
     @GetMapping("/finalcookie")
     public String getFinalCookie() {
         return generateNewCookie.returnFinalCookie();
     }
-    @GetMapping("/secondcookie")
-    public String getSecondCookie() {
-        List<String> cooki = secondCookie.returnCookie();
-        StringBuilder builder = new StringBuilder();
-        for(String cooki1 : cooki){
-            builder.append(cooki1 + "\n");
-        }
-        return builder.toString();
-    }
+
 }

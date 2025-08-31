@@ -24,11 +24,11 @@ public class TestFirstCookie {
         this.secondCookie = secondCookie;
     }
 
-    @GetMapping("/chart")
+    @GetMapping("/testchart")
     public String getChart() {
         return nseService.getChartData();
     }
-    @GetMapping("/cookieslist")
+    @GetMapping("/testcookieslist")
     public String getCookiesList() {
         List<String> cooki = firstCookie.returnCookie();
         StringBuilder builder = new StringBuilder();
@@ -37,17 +37,8 @@ public class TestFirstCookie {
         }
         return builder.toString();
     }
-    @GetMapping("/finalcookie")
+    @GetMapping("/testfinalcookie")
     public String getFinalCookie() {
         return generateNewCookie.returnFinalCookie();
-    }
-    @GetMapping("/secondcookie")
-    public String getSecondCookie() {
-        List<String> cooki = secondCookie.returnCookie();
-        StringBuilder builder = new StringBuilder();
-        for(String cooki1 : cooki){
-            builder.append(cooki1 + "\n");
-        }
-        return builder.toString();
     }
 }
