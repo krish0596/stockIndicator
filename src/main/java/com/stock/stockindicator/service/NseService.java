@@ -1,4 +1,4 @@
-package com.stock.stockindicator.Service;
+package com.stock.stockindicator.service;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;

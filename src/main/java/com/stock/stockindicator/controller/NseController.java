@@ -1,6 +1,6 @@
 package com.stock.stockindicator.controller;
 
-import com.stock.stockindicator.Service.NseService;
+import com.stock.stockindicator.service.NseService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
