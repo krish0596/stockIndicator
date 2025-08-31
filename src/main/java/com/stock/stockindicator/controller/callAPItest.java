@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class callAPItest {
-    @GetMapping(path = "/product")
+    @GetMapping(path = "/testapi")
     public String callAPItest(){
         return "Hello World";
     }
