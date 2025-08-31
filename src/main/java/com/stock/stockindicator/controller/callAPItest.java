@@ -1,4 +1,4 @@
-package com.stock.stockindicator.core;
+package com.stock.stockindicator.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

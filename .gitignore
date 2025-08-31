@@ -39,3 +39,6 @@ out/
 ### OCA ###
 .oca
 customTests
+
+### ENV ###
+.env
