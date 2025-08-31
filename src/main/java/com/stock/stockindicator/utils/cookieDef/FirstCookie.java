@@ -7,14 +7,14 @@ import reactor.core.publisher.Mono;
 
 import java.util.List;
 
-////////////////////
-///  The aim is to hit the nseindia.com host and fetch cookies
-///  nsit
-///  ak_bmsc
-///  bm_mi
-///  nseappid
-///  and return those cookies in a single string
-////////////////////
+/////////////////////////////////////////////////////////////////////
+////  The aim is to hit the nseindia.com host and fetch cookies  ////
+////  nsit                                                       ////
+////  ak_bmsc                                                    ////
+////  bm_mi                                                      ////
+////  nseappid                                                   ////
+////  and return those cookies in a single string                ////
+/////////////////////////////////////////////////////////////////////
 
 @Component
 public class FirstCookie {

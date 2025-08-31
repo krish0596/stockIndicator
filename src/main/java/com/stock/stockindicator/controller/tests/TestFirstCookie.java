@@ -1,4 +1,4 @@
-package com.stock.stockindicator.controller;
+package com.stock.stockindicator.controller.tests;
 
 import com.stock.stockindicator.service.NseService;
 import com.stock.stockindicator.utils.cookie.GenerateNewCookie;
@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class NseController {
+public class TestFirstCookie {
 
     private final NseService nseService;
     private final FirstCookie firstCookie;
     private final GenerateNewCookie generateNewCookie;
     private final SecondCookie secondCookie;
 
-    public NseController(NseService nseService , FirstCookie firstCookie, GenerateNewCookie generateNewCookie, SecondCookie secondCookie) {
+    public TestFirstCookie(NseService nseService , FirstCookie firstCookie, GenerateNewCookie generateNewCookie, SecondCookie secondCookie) {
         this.nseService = nseService;
         this.firstCookie = firstCookie;
         this.generateNewCookie = generateNewCookie;
