@@ -2,12 +2,9 @@ package com.stock.stockindicator.controller;
 
 import com.stock.stockindicator.service.NseService;
 import com.stock.stockindicator.utils.cookie.GenerateNewCookie;
-import com.stock.stockindicator.utils.cookieDef.FirstCookie;
-import com.stock.stockindicator.utils.cookieDef.SecondCookie;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 @RestController
 public class NseController {
@@ -20,14 +17,14 @@ public class NseController {
         this.generateNewCookie = generateNewCookie;
     }
 
-    @GetMapping("/chart")
-    public String getChart() {
-        return nseService.getChartData();
+    @GetMapping("/chart/{symbol}")
+    public String getChart(@PathVariable String symbol) {
+        return nseService.getChartData(symbol);
     }
 
     @GetMapping("/finalcookie")
     public String getFinalCookie() {
-        return generateNewCookie.returnFinalCookie();
+        return generateNewCookie.returnNewCookie();
     }
 
 }

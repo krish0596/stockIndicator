@@ -14,7 +14,7 @@ public class GenerateNewCookie {
         this.secondCookie = secondCookie;
     }
 
-    public String returnFinalCookie() {
+    public String returnNewCookie() {
         BaseCookie baseCookie = new BaseCookie();
         List<String> first = secondCookie.returnCookie();
 

@@ -16,12 +16,11 @@ public class NseService {
         this.generateNewCookie = generateNewCookie;
     }
 
-    public String getChartData() {
-        String cookie1 = generateNewCookie.returnFinalCookie();
+    public String getChartData(String symbol) {
         ResponseEntity<String> response = client.get()
-                .uri("/api/chart-databyindex-dynamic?index=MRFEQN&type=symbol")
-                .header("cookie", cookie1)
-                .header("referer", "https://www.nseindia.com/get-quotes/equity?symbol=ITC")
+                .uri("/api/chart-databyindex-dynamic?index={symbol}EQN&type=symbol", symbol)
+                .header("cookie", generateNewCookie.returnNewCookie())
+                .header("referer", "https://www.nseindia.com/get-quotes/equity?symbol={symbol}", symbol)
                 .retrieve()
                 .toEntity(String.class)
                 //.exchangeToMono(res -> res.toEntity(String.class))
